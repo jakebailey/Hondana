@@ -32,8 +32,7 @@ jobs:
       - run: poetry install
       
       - run: |
-          source $(poetry env info --path)/bin/activate
-          echo PATH=$PATH >> $GITHUB_ENV
+          echo "$(poetry env info --path)/bin" >> $GITHUB_PATH
 
       - run: python -c 'import sys, json; json.dump(sys.path, sys.stdout, indent=4)'
       
